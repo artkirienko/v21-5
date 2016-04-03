@@ -32,6 +32,7 @@ int main(int argc, const char * argv[])
     }
 
     //Ввод матрицы цен графа для динамики.
+    printf("Введите матрицу цен графа.\n");
     for (p=0; p<n; p++){
         for (q=0; q<n; q++){
             scanf("%d",&temp);
