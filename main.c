@@ -17,20 +17,20 @@ int main(int argc, const char * argv[])
 {
     //С динамикой.
     int **k, *l, p, q, dmins, dmini, n, temp;
-    
+
     printf("Введите количество вершин графа.\n");
     scanf("%d",&n);
     l=(int *)malloc(n*sizeof(int));
-    
+
     //Обнуление динамического массива сумм.
     for (p=0; p<n; p++) l[p]=0;
-    
+
     //Создание динамического массива для цен графа.
     k=(int **)malloc(n*sizeof(int *));
     for (p=0; p<n; p++){
         k[p]=(int *)malloc(n*sizeof(int));
     }
-    
+
     //Ввод матрицы цен графа для динамики.
     for (p=0; p<n; p++){
         for (q=0; q<n; q++){
@@ -39,21 +39,21 @@ int main(int argc, const char * argv[])
         }
     }
     printf("\n");
-    
+
     for (p=0; p<n; p++){
         for (q=0; q<n; q++){
             printf("%d ",k[p][q]);
         }
         printf("\n");
     }
-    
+
     //Подсчёт сумм для динамического массива.
     for (p=0; p<n; p++){
         for (q=0; q<n; q++){
             l[p]=l[p]+k[p][q];
         }
     }
-  
+
     //Поиск минимальной суммы в динамике.
     //Что если несколько сумм? Если все одинаковые?
     dmins=l[0];
@@ -64,10 +64,10 @@ int main(int argc, const char * argv[])
             dmini=p;
         }
     }
-    
-    
+
     printf("Ответ.\n");
     printf("Город #%d является городом с минимальной суммой расстояний до других городов.\n",dmini+1);
     printf("Сумма расстояний от этого города до других городов: %d\n",dmins);
     return 0;
 }
+
