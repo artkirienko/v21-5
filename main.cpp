@@ -59,17 +59,16 @@ int main()
     int v1;
     int v2;
     int wt;
-    cout << "Города вводятся из файла" << endl;
-    printf("Введите количество вершин и количество рёбер графа.\n");
+    cout << "Введите количество вершин и количество рёбер графа." << endl;
     scanf("%d%d", &n, &m);
     init(*ft, VERT, 0);
     init(*v, EDGE, 0);
     init(*nx, EDGE, 0);
     init(*w, EDGE, 0);
     sum = maxv;
-    printf("Введите цены рёбер графа.\n");
+    cout << "Введите цены рёбер графа." << endl;
     for (i=1; i<=m*2; i+=2) {
-        scanf("%d%d%d", &v1, &v2, &wt); 
+        scanf("%d%d%d", &v1, &v2, &wt);
         v[i] = v2;
         v[i+1] = v1;
         nx[i] = ft[v1];
@@ -86,3 +85,4 @@ int main()
     cout << "Нужный город: " << city << " " << sum << endl;
     return 0;
 }
+
